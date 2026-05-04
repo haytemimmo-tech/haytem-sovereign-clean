@@ -1,0 +1,5 @@
+Place your portrait photo here as:  portrait.jpg
+
+The website will automatically display it in the Statesman & Advisor section.
+Recommended: high-resolution portrait, minimum 800x1000px.
+File name must be exactly: portrait.jpg
