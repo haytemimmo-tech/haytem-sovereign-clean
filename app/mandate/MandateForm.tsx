@@ -72,7 +72,7 @@ export default function MandateForm({ city }: MandateFormProps) {
         fontFamily: "serif"
       }}
     >
-      <h1 style={{ fontSize: "52px", marginBottom: "20px", color: "#d4af37" }}>
+      <h1 className="mandate-heading" style={{ fontSize: "52px", marginBottom: "20px", color: "#d4af37" }}>
         Private Mandate Access
       </h1>
 
