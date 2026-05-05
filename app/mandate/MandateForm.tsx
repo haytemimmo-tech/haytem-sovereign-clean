@@ -7,6 +7,9 @@ interface MandateFormProps {
 }
 
 export default function MandateForm({ city }: MandateFormProps) {
+  const cityName = city
+  ?.replaceAll("-", " ")
+  .replace(/\b\w/g, (l) => l.toUpperCase());
   const [submitted, setSubmitted] = useState(false);
 
   const inputStyle = {
@@ -73,27 +76,24 @@ export default function MandateForm({ city }: MandateFormProps) {
       }}
     >
       <h1 className="mandate-heading" style={{ marginBottom: "20px", color: "#d4af37" }}>
-        Private Mandate Access
-      </h1>
+  Invest in {cityName}
+</h1>
 
       {city && (
         <p style={{ marginBottom: "20px", color: "#d4af37", letterSpacing: "0.08em" }}>
-          Investment Interest: {city.toUpperCase()}
+          Investment Focus: {city.toUpperCase()}
         </p>
       )}
 
-      <p
-        style={{
-          fontSize: "clamp(16px, 4vw, 18px)",
-          width: "100%",
-          lineHeight: "1.6",
-          opacity: 0.8,
-          marginBottom: "40px"
-        }}
-      >
-        This is a confidential access channel reserved for high-level capital.
-        Only serious investment mandates are processed through this gateway.
-      </p>
+      <p style={{
+  fontSize: "clamp(16px, 4vw, 18px)",
+  maxWidth: "650px",
+  lineHeight: "1.6",
+  opacity: 0.85,
+  marginBottom: "40px"
+}}>
+  Private Mandate Access — A confidential gateway to exclusive, high-yield real estate opportunities in {cityName}. Access is strictly reserved for qualified investors and strategic capital partners.
+</p>
 
       {submitted && (
         <div
