@@ -71,7 +71,7 @@ export default function MandateGateway() {
   data.append("access_key", "57cc01e7-366f-45ea-ba3c-b04a3ef99532");
   data.append("subject", "New Strategic Mandate Request - HAYTEM SOVEREIGN");
 
-  fetch("https://api.web3forms.com/submit", {
+  fetch("/api/mandate", {
     method: "POST",
     body: data,
   })
