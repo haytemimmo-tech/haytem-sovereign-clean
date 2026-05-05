@@ -88,6 +88,31 @@ export default function MandateGateway() {
       alert("Error sending form.");
     });
 }
+  if (submitted) {
+  return (
+    <section className="section-padding texture-overlay">
+      <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+
+        <h2 style={{ marginBottom: "1rem", color: "#d4af37" }}>
+          Confidential Request Received
+        </h2>
+
+        <p style={{ marginBottom: "1rem" }}>
+          Your investment request has been received. Our private desk will review the information carefully and respond only if the mandate aligns with our confidential opportunity pipeline.
+        </p>
+
+        <p style={{ marginBottom: "2rem", opacity: 0.75 }}>
+          Our team typically reviews confidential mandates within 24–72 hours.
+        </p>
+
+        <a href="/" className="btn-primary">
+          Return to Homepage
+        </a>
+
+      </div>
+    </section>
+  );
+}
   return (
     <section
       id="mandate"
