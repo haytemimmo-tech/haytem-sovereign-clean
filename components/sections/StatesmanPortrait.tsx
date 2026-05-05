@@ -76,7 +76,7 @@ export default function StatesmanPortrait() {
               }}
             >
               <Image
-                src="/Haytem-about.jpg"
+                src="/haytem-about.jpg"
                 alt="Hassaneine Haytem, Global Market Architect"
                 fill
                 style={{
