@@ -17,264 +17,308 @@ export default function StatesmanPortrait() {
   }, []);
 
   return (
-    <section
-      id="portrait"
-      className="section-padding section-graphite texture-overlay"
-      ref={ref}
-      style={{ position: 'relative', overflow: 'hidden' }}
-    >
-      <div className="sovereign-container">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: isDesktop ? '1fr 1fr' : '1fr',
-            gap: isDesktop ? '6rem' : '3rem',
-            alignItems: 'center',
-          }}
-        >
-          {/* Portrait */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ position: 'relative' }}
-          >
-            {/* Frame */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-15px',
-                left: '-15px',
-                right: '15px',
-                bottom: '15px',
-                border: '1px solid rgba(201,168,76,0.2)',
-                pointerEvents: 'none',
-                zIndex: 1,
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                top: '15px',
-                left: '15px',
-                right: '-15px',
-                bottom: '-15px',
-                border: '1px solid rgba(201,168,76,0.1)',
-                pointerEvents: 'none',
-                zIndex: 1,
-              }}
-            />
+    <>
+      {/* JSON-LD Person Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org/',
+            '@type': 'Person',
+            name: 'Hassaneine Haytem',
+            jobTitle: 'Global Market Architect',
+            url: 'https://www.haytemsovereign.com',
+            image: 'https://www.haytemsovereign.com/Haytem-about.jpg',
+            description:
+              'Hassaneine Haytem leads HAYTEM SOVEREIGN, a private strategic advisory platform focused on strategic real estate investment, foreign direct investment advisory, emerging investment markets, private mandates, industrial platforms, resorts, and data infrastructure.',
+          }),
+        }}
+      />
 
-            {/* Portrait container */}
+      <section
+        id="about"
+        className="section-padding section-graphite texture-overlay"
+        ref={ref}
+        style={{ position: 'relative', overflow: 'hidden' }}
+      >
+        <div className="sovereign-container">
+          <motion.p
+    className="section-label"
+    initial={{ opacity: 0, x: -20 }}
+    animate={inView ? { opacity: 1, x: 0 } : {}}
+    transition={{ duration: 0.6 }}
+    style={{ marginBottom: "1.5rem" }}
+  >
+    X — GLOBAL ADVISOR
+  </motion.p>
+
+          {/* About Header with Portrait */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{
+              display: 'flex',
+              flexDirection: isDesktop ? 'row' : 'column',
+              alignItems: isDesktop ? 'center' : 'center',
+              gap: isDesktop ? '3rem' : '2rem',
+              marginBottom: '3.5rem',
+              justifyContent: isDesktop ? 'flex-start' : 'center',
+            }}
+          >
+            {/* Portrait - Subtle Signature */}
             <div
               style={{
                 position: 'relative',
-                aspectRatio: '3/4',
-                overflow: 'hidden',
-                background: '#1A1A1A',
+                width: isDesktop ? '140px' : '100px',
+                height: isDesktop ? '140px' : '100px',
+                flexShrink: 0,
               }}
             >
-              {/* Try to load portrait.jpg, fallback to placeholder */}
-              <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-                <Image
-                  src="/portrait.jpg"
-                  alt="Hassaneine Haytem — Global Market Architect"
-                  fill
-                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
-                  priority
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                />
-                {/* Gradient overlay */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.6) 100%)',
-                  }}
-                />
-              </div>
-
-              {/* Portrait fallback (shown if image fails) */}
-              <div
+              <Image
+                src="/Haytem-about.jpg"
+                alt="Hassaneine Haytem, Global Market Architect"
+                fill
                 style={{
-                  position: 'absolute',
-                  inset: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'linear-gradient(135deg, #1A1A1A 0%, #0F0F0F 100%)',
-                  zIndex: -1,
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  borderRadius: '50%',
+                }}
+                priority
+              />
+            </div>
+
+            {/* Title & Subtitle */}
+            <div>
+              <h2
+                style={{
+                  fontFamily: 'Cormorant Garamond, serif',
+                  fontSize: isDesktop ? 'clamp(2.2rem, 3.5vw, 3rem)' : 'clamp(1.8rem, 4vw, 2.4rem)',
+                  fontWeight: 300,
+                  lineHeight: 1.15,
+                  color: '#F5F0E8',
+                  marginBottom: '0.8rem',
+                  letterSpacing: '-0.01em',
                 }}
               >
-                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginBottom: '1rem' }}>
-                  <circle cx="40" cy="30" r="18" stroke="#C9A84C" strokeOpacity="0.3" strokeWidth="1" />
-                  <path d="M8 70 C8 52 20 44 40 44 C60 44 72 52 72 70" stroke="#C9A84C" strokeOpacity="0.3" strokeWidth="1" fill="none" />
-                </svg>
+                Hassaneine Haytem
+                <br />
+                <span className="gold-text">Global Market Architect</span>
+              </h2>
+
+              <p
+                style={{
+                  fontFamily: 'Cormorant Garamond, serif',
+                  fontSize: '1.05rem',
+                  fontWeight: 300,
+                  lineHeight: 1.6,
+                  color: 'rgba(245, 240, 232, 0.65)',
+                  letterSpacing: '0.01em',
+                }}
+              >
+                Private strategic advisory across real estate, resorts, industrial platforms, data infrastructure, and emerging investment markets.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Core Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            style={{
+              maxWidth: '900px',
+            }}
+          >
+            <div className="gold-line" style={{ marginBottom: '2.5rem' }} />
+
+            {/* Primary Content */}
+            <div
+              style={{
+                display: isDesktop ? 'grid' : 'block',
+                gridTemplateColumns: isDesktop ? '1.2fr 1fr' : '1fr',
+                gap: isDesktop ? '3rem' : '2rem',
+                marginBottom: '3rem',
+              }}
+            >
+              {/* Left: About Text */}
+              <div>
                 <p
                   style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.65rem',
-                    letterSpacing: '0.2em',
-                    color: 'rgba(201,168,76,0.4)',
-                    textAlign: 'center',
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '1.1rem',
+                    fontWeight: 300,
+                    lineHeight: 1.7,
+                    color: 'rgba(245, 240, 232, 0.6)',
+                    letterSpacing: '0.01em',
+                    marginBottom: '1.5rem',
                   }}
                 >
-                  Place portrait.jpg in /public/
+                  Hassaneine Haytem leads HAYTEM SOVEREIGN as a private strategic advisory platform positioned around global market architecture, strategic real estate investment, foreign direct investment intelligence, and emerging investment markets.
                 </p>
+
+                <p
+                  style={{
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '1.1rem',
+                    fontWeight: 300,
+                    lineHeight: 1.7,
+                    color: 'rgba(245, 240, 232, 0.55)',
+                    letterSpacing: '0.01em',
+                    marginBottom: '1.5rem',
+                  }}
+                >
+                  The advisory focuses on identifying, structuring, and securing investment opportunities across both established destinations and future growth corridors before they reach institutional saturation. Its core areas include premium real estate, integrated resort developments, industrial platforms, logistics corridors, data centers, and digital infrastructure.
+                </p>
+
+                <p
+                  style={{
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '1.1rem',
+                    fontWeight: 300,
+                    lineHeight: 1.7,
+                    color: 'rgba(245, 240, 232, 0.55)',
+                    letterSpacing: '0.01em',
+                  }}
+                >
+                  Through a discreet network of strategic analysts, legal partners, market specialists, and cross-border advisors, HAYTEM SOVEREIGN approaches each mandate with confidentiality, precision, and long-term capital vision.
+                </p>
+              </div>
+
+              {/* Right: Core Expertise */}
+              <div>
+                <h3
+                  style={{
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '1.1rem',
+                    fontWeight: 400,
+                    color: '#C9A84C',
+                    marginBottom: '1.5rem',
+                    letterSpacing: '0.02em',
+                  }}
+                >
+                  Core Expertise
+                </h3>
+
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                  }}
+                >
+                  {[
+                    'Strategic real estate investment and asset positioning',
+                    'Integrated resort and hospitality development advisory',
+                    'Industrial and logistics investment structuring',
+                    'Data center and digital infrastructure positioning',
+                    'Foreign direct investment (FDI) and cross-border capital strategy',
+                    'Private mandates for qualified investors, family offices, and strategic capital partners',
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      style={{
+                        fontFamily: 'Cormorant Garamond, serif',
+                        fontSize: '0.95rem',
+                        fontWeight: 300,
+                        lineHeight: 1.6,
+                        color: 'rgba(245, 240, 232, 0.5)',
+                        paddingLeft: '1.5rem',
+                        position: 'relative',
+                        letterSpacing: '0.01em',
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: 'absolute',
+                          left: 0,
+                          top: '0.35rem',
+                          width: '4px',
+                          height: '4px',
+                          backgroundColor: '#C9A84C',
+                          borderRadius: '50%',
+                        }}
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            {/* Name plate */}
+            {/* Closing Advisory Statement */}
             <div
               style={{
-                position: 'absolute',
-                bottom: '-1px',
-                left: 0,
-                right: 0,
-                padding: '1.5rem 2rem',
-                background: 'linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.95) 100%)',
-                zIndex: 2,
+                borderTop: '1px solid rgba(201, 168, 76, 0.15)',
+                borderBottom: '1px solid rgba(201, 168, 76, 0.15)',
+                padding: '2rem 0',
+                marginBottom: '2rem',
               }}
             >
               <p
                 style={{
                   fontFamily: 'Cormorant Garamond, serif',
-                  fontSize: '1.5rem',
-                  fontWeight: 400,
-                  color: '#F5F0E8',
-                  letterSpacing: '0.05em',
+                  fontSize: '1rem',
+                  fontWeight: 300,
+                  lineHeight: 1.7,
+                  color: 'rgba(245, 240, 232, 0.65)',
+                  letterSpacing: '0.01em',
+                  fontStyle: 'italic',
                 }}
               >
-                Hassaneine Haytem
-              </p>
-              <p className="micro-label" style={{ color: 'rgba(201,168,76,0.6)' }}>
-                Global Market Architect
+                Engagements are reserved for serious capital, institutional profiles, and high-level investment mandates requiring discretion, market intelligence, and strategic execution.
               </p>
             </div>
-          </motion.div>
 
-          {/* Bio */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <p className="section-label" style={{ marginBottom: '1.5rem' }}>
-              X — The Statesman & Advisor
-            </p>
-
-            <div className="gold-line-left" style={{ marginBottom: '2rem' }} />
-
-            <h2
-              style={{
-                fontFamily: 'Cormorant Garamond, serif',
-                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                fontWeight: 300,
-                lineHeight: 1.1,
-                color: '#F5F0E8',
-                marginBottom: '2rem',
-              }}
-            >
-              The Silent Architect
-              <br />
-              <span className="gold-text">of Wealth.</span>
-            </h2>
-
-            <p
-              style={{
-                fontFamily: 'Cormorant Garamond, serif',
-                fontSize: '1.05rem',
-                fontWeight: 300,
-                lineHeight: 1.6,
-                color: 'rgba(245, 240, 232, 0.55)',
-                letterSpacing: '0.02em',
-                marginBottom: '2rem',
-              }}
-            >
-              Hassaneine Haytem is the silent architect of wealth. Whether advising a sovereign
-              investment mandate or guiding a private investor toward a trophy acquisition in Dubai,
-              Marrakech, Monaco, Batumi, Montenegro, Albania, Singapore, or beyond — his mission
-              remains unchanged.
-            </p>
-
+            {/* Contact Line */}
             <div
               style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '1rem',
-                marginBottom: '2.5rem',
+                display: 'flex',
+                flexDirection: isDesktop ? 'row' : 'column',
+                alignItems: isDesktop ? 'center' : 'flex-start',
+                gap: isDesktop ? '1rem' : '0.8rem',
               }}
             >
-              {[
-                { title: 'Absolute Alpha', desc: 'First-mover positioning in every mandate.' },
-                { title: 'Ironclad Secrecy', desc: 'Discretion is non-negotiable, always.' },
-                { title: 'Strategic Permanence', desc: 'Built for legacy, not cycles.' },
-                { title: 'Sovereign Authority', desc: 'Operating at the intersection of power.' },
-              ].map((attr) => (
-                <div
-                  key={attr.title}
-                  style={{
-                    padding: '1.25rem',
-                    borderLeft: '1px solid rgba(201,168,76,0.2)',
-                  }}
-                >
-                  <h4
-                    style={{
-                      fontFamily: 'Cormorant Garamond, serif',
-                      fontSize: '1rem',
-                      fontWeight: 400,
-                      color: '#C9A84C',
-                      marginBottom: '0.4rem',
-                    }}
-                  >
-                    {attr.title}
-                  </h4>
-                  <p
-                    style={{
-                      fontFamily: 'Cormorant Garamond, serif',
-                      fontSize: '0.88rem',
-                      fontWeight: 300,
-                      color: 'rgba(245, 240, 232, 0.4)',
-                      lineHeight: 1.8,
-                      letterSpacing: '0.02em',
-                    }}
-                  >
-                    {attr.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Advisory reaches */}
-            <p className="micro-label" style={{ marginBottom: '1rem' }}>
-              Advisory Footprint
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              {['Dubai', 'Marrakech', 'Monaco', 'Batumi', 'Montenegro', 'Albania', 'Singapore', 'Mauritius', 'London', 'Geneva', 'Abu Dhabi', 'Athens'].map((city) => (
-                <span
-                  key={city}
-                  style={{
-                    padding: '0.3rem 0.8rem',
-                    border: '1px solid rgba(42,42,42,0.9)',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.62rem',
-                    fontWeight: 400,
-                    letterSpacing: '0.1em',
-                    color: 'rgba(245, 240, 232, 0.35)',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {city}
-                </span>
-              ))}
+              <p
+                style={{
+                  fontFamily: 'Cormorant Garamond, serif',
+                  fontSize: '1rem',
+                  fontWeight: 300,
+                  color: 'rgba(245, 240, 232, 0.6)',
+                  letterSpacing: '0.01em',
+                }}
+              >
+                For confidential advisory enquiries:
+              </p>
+              <a
+                href="mailto:advisory@haytemsovereign.com"
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '1rem',
+                  fontWeight: 400,
+                  color: '#C9A84C',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid #C9A84C',
+                  paddingBottom: '2px',
+                  transition: 'all 0.3s ease',
+                  letterSpacing: '0.01em',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = '0.8';
+                  e.currentTarget.style.borderBottomColor = '#E8D5A3';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = '1';
+                  e.currentTarget.style.borderBottomColor = '#C9A84C';
+                }}
+              >
+                advisory@haytemsovereign.com
+              </a>
             </div>
           </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
