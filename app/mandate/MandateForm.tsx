@@ -118,6 +118,27 @@ export default function MandateForm({ city }: MandateFormProps) {
           <p style={{ marginTop: "12px", opacity: 0.7 }}>
             Our team typically reviews confidential mandates within 24–72 hours.
           </p>
+
+          <div style={{ marginTop: "40px", textAlign: "center" }}>
+  <a
+    href="/"
+    style={{
+      display: "inline-block",
+      padding: "14px 32px",
+      border: "1px solid rgba(212,175,55,0.4)",
+      borderRadius: "40px",
+      color: "#d4af37",
+      fontSize: "clamp(13px, 2.5vw, 15px)",
+      letterSpacing: "0.08em",
+      background: "rgba(212,175,55,0.06)",
+      textDecoration: "none",
+      transition: "all 0.25s ease",
+      maxWidth: "90%"
+    }}
+  >
+    Return to Hompage
+  </a>
+</div>
         </div>
       )}
 
