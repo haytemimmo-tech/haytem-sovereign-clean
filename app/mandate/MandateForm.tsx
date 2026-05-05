@@ -64,7 +64,7 @@ export default function MandateForm({ city }: MandateFormProps) {
     <form
       onSubmit={handleSubmit}
       style={{
-        padding: "120px",
+        padding: "clamp(32px, 6vw, 120px)",
         background:
           "radial-gradient(circle at top left, rgba(212,175,55,0.14), transparent 34%), #0a0a0a",
         color: "white",
@@ -84,8 +84,8 @@ export default function MandateForm({ city }: MandateFormProps) {
 
       <p
         style={{
-          fontSize: "18px",
-          maxWidth: "650px",
+          fontSize: "clamp(16px, 4vw, 18px)",
+          width: "100%",
           lineHeight: "1.6",
           opacity: 0.8,
           marginBottom: "40px"
