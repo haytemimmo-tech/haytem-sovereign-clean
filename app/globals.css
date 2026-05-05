@@ -623,3 +623,21 @@ h3 { letter-spacing: 0.01em; }
   90% { transform: translate(2%, -1%); }
   100% { transform: translate(0, 0); }
 }
+
+/* Mandate heading desktop */
+.mandate-heading {
+  font-size: 52px;
+  line-height: 1.1;
+}
+
+/* Mandate heading real mobile */
+@media (max-width: 430px) {
+  .mandate-heading {
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+}
