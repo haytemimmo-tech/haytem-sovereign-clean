@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const city = body.city || "Eldorado";
 
     await resend.emails.send({
-      from: "Mandate Desk <mandate@haytemsovereign.com>",
+      from: "Mandate Desk <onboarding@resend.dev>",
       to: [
         "haytemsovereign@gmail.com",
         "mandate@haytemsovereign.com"
