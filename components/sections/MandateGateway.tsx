@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const identityTypes = [
@@ -61,9 +61,21 @@ export default function MandateGateway() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', notes: '' });
+  useEffect(() => {
+  if (submitted) {
+    setTimeout(() => {
+      document.getElementById("mandate")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }
+}, [submitted]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
   const form = e.currentTarget;
 
