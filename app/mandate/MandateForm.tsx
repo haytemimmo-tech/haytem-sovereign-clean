@@ -53,7 +53,7 @@ const cityFromUrl = params.get("city") || city || "Eldorado";
   fullName: data.get("fullName"),
   email: data.get("email"),
   phone: data.get("phone"),
-  investmentBudget: data.get("investmentBudget"),
+  investmentBudget: data.get("investmentbudget"),
   yourInterest: data.get("yourInterest"),
   city: cityFromUrl
   };
