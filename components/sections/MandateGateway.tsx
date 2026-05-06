@@ -150,7 +150,8 @@ fetch("/api/mandate", {
       <div
   className="sovereign-container"
   style={{
-    paddingTop: "2rem",
+    paddingTop: "1rem",
+    paddingBottom: "6rem",
   }}
 >
         {/* Header */}
