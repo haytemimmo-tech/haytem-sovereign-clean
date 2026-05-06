@@ -41,31 +41,37 @@ export default function MandateForm({ city }: MandateFormProps) {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const form = e.currentTarget;
-const data = new FormData(form);
+  const form = e.currentTarget;
+  const data = new FormData(form);
 
-const response = await fetch("/api/mandate", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: data.get("name"),
+  const pathParts = window.location.pathname.split("/").filter(Boolean);
+  const city = pathParts[pathParts.length - 1] || "Eldorado";
+
+  const payload = {
+    fullName: data.get("fullName"),
     email: data.get("email"),
     phone: data.get("phone"),
-    notes: data.get("notes"),
-  }),
-});
-
-    if (response.ok) {
-      setSubmitted(true);
-      form.reset();
-    } else {
-      alert("Submission failed. Please try again.");
-    }
+    investmentBudget: data.get("investmentBudget"),
+    yourInterest: data.get("yourInterest"),
+    city
   };
+
+  const response = await fetch("/api/mandate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (response.ok) {
+    form.reset();
+  } else {
+    alert("Submission failed");
+  }
+};
 
   return (
     <form
