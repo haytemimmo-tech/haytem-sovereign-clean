@@ -66,15 +66,24 @@ export default function MandateGateway() {
   e.preventDefault();
 
   const form = e.currentTarget;
-  const data = new FormData(form);
 
-  data.append("access_key", "57cc01e7-366f-45ea-ba3c-b04a3ef99532");
-  data.append("subject", "New Strategic Mandate Request - HAYTEM SOVEREIGN");
 
-  fetch("/api/mandate", {
-    method: "POST",
-    body: data,
-  })
+  const formData = new FormData(form);
+
+const data = {
+  name: formData.get("name"),
+  email: formData.get("email"),
+  phone: formData.get("phone"),
+  notes: formData.get("notes"),
+};
+
+fetch("/api/mandate", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data),
+})
     .then((response) => response.json())
     .then((result) => {
       if (result.success) {
