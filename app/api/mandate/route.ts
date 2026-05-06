@@ -17,7 +17,10 @@ export async function POST(req: Request) {
 
    await resend.emails.send({
   from: "Mandate Desk <mandate@haytemsovereign.com>",
-  to: ["haytemsovereign@gmail.com"],
+  to: [
+  "mandate@haytemsovereign.com",
+  "haytemsovereign@gmail.com"
+],
   subject: "New Strategic Mandate Request",
   html: `
     <h2>New Strategic Mandate Request</h2>
