@@ -161,7 +161,7 @@ export default function MandateForm({ city }: MandateFormProps) {
             gap: "15px"
           }}
         >
-          <input name="name" placeholder="Full Name" style={inputStyle} required />
+          <input name="fullName" placeholder="Full Name" style={inputStyle} required />
           <input name="email" placeholder="Email" style={inputStyle} type="email" required />
           <input
             type="tel"
@@ -170,10 +170,10 @@ export default function MandateForm({ city }: MandateFormProps) {
             style={inputStyle}
             required
           />
-          <input name="budget" placeholder="Investment Budget (€)" style={inputStyle} required />
+          <input name="investmentBudget" placeholder="Investment Budget (€)" style={inputStyle} required />
 
           <textarea
-            name="interest"
+            name="yourInterest"
             placeholder="Your Interest (City / Asset Type)"
             style={{ ...inputStyle, height: "120px" }}
             required
