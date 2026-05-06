@@ -16,8 +16,8 @@ export async function POST(req: Request) {
     const { name, email, phone, notes } = body;
 
    await resend.emails.send({
-  from: "onboarding@resend.dev",
-  to: ["mandate@haytemsovereign.com"],
+  from: "Mandate Desk <mandate@haytemsovereign.com>",
+  to: ["haytemsovereign@gmail.com"],
   subject: "New Strategic Mandate Request",
   html: `
     <h2>New Strategic Mandate Request</h2>
