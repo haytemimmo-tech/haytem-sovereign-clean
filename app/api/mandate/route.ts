@@ -1,9 +1,16 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey) {
+      return Response.json({ success: false, error: 'Missing API key' }, { status: 500 });
+    }
+
+    const resend = new Resend(apiKey);
     const body = await req.json();
 
     const { name, email, phone, notes } = body;
