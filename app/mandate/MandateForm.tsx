@@ -67,10 +67,11 @@ const cityFromUrl = params.get("city") || city || "Eldorado";
   });
 
   if (response.ok) {
-    form.reset();
-  } else {
-    alert("Submission failed");
-  }
+  setSubmitted(true);
+  form.reset();
+} else {
+  alert("Submission failed");
+}
 };
 
   return (
