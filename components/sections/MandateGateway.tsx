@@ -129,13 +129,15 @@ fetch("/api/mandate", {
   return (
     <section
       id="mandate"
-      className="section-padding texture-overlay"
+      className="texture-overlay"
       ref={ref}
       style={{
-        position: 'relative',
-        overflow: 'hidden',
-        background: 'linear-gradient(180deg, #0A0A0A 0%, #0C0B00 50%, #0A0A0A 100%)',
-      }}
+  position: 'relative',
+  overflow: 'hidden',
+  background: 'linear-gradient(...)',
+  paddingTop: '4rem',
+  paddingBottom: '6rem'
+}}
     >
       {/* Decorative border */}
       <div
