@@ -1,20 +1,28 @@
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function POST(req: Request) {
   try {
-    const formData = await req.formData();
+    const body = await req.json();
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
+    const { name, email, phone, notes } = body;
+
+    await resend.emails.send({
+      from: 'Mandate Desk <mandate@haytemsovereign.com>',
+      to: ['mandate@haytemsovereign.com'],
+      subject: 'New Strategic Mandate Request',
+      html: `
+        <h2>New Strategic Mandate Request</h2>
+        <p><strong>Name:</strong> ${name || ''}</p>
+        <p><strong>Email:</strong> ${email || ''}</p>
+        <p><strong>Phone:</strong> ${phone || ''}</p>
+        <p><strong>Notes:</strong> ${notes || ''}</p>
+      `,
     });
 
-    const result = await response.json();
-
-    return new Response(JSON.stringify(result), {
-      status: 200,
-    });
+    return Response.json({ success: true });
   } catch (error) {
-    return new Response(JSON.stringify({ success: false }), {
-      status: 500,
-    });
+    return Response.json({ success: false }, { status: 500 });
   }
 }
