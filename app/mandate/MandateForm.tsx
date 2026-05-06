@@ -44,16 +44,20 @@ export default function MandateForm({ city }: MandateFormProps) {
     e.preventDefault();
 
     const form = e.currentTarget;
-    const data = new FormData(form);
+const data = new FormData(form);
 
-    data.append("access_key", "57cc01e7-366f-45ea-ba3c-b04a3ef99532");
-    data.append("subject", `New Investment Request - ${city || "Global"} - HAYTEM SOVEREIGN`);
-    data.append("city_source", city || "Global Mandate");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: data
-    });
+const response = await fetch("/api/mandate", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    name: data.get("name"),
+    email: data.get("email"),
+    phone: data.get("phone"),
+    notes: data.get("notes"),
+  }),
+});
 
     if (response.ok) {
       setSubmitted(true);
