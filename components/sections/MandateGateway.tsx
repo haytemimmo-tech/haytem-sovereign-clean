@@ -75,6 +75,10 @@ const data = {
   email: formData.get("email"),
   phone: formData.get("phone"),
   notes: formData.get("notes"),
+  identity: formData.get("identity"),
+  channel: formData.get("channel"),
+  capital: formData.get("capital"),
+  mandate_type: formData.get("mandate_type"),
 };
 
 fetch("/api/mandate", {
