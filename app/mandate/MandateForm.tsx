@@ -46,14 +46,14 @@ export default function MandateForm({ city }: MandateFormProps) {
   const form = e.currentTarget;
   const data = new FormData(form);
 
-  onst params = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
 const cityFromUrl = params.get("city") || city || "Eldorado";
 
   const payload = {
   fullName: data.get("fullName"),
   email: data.get("email"),
   phone: data.get("phone"),
-  investmentBudget: data.get("investmentBudget"),
+  investmentBudget: data.get("investmentbudget"),
   yourInterest: data.get("yourInterest"),
   city: cityFromUrl
   };
