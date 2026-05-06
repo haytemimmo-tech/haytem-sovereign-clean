@@ -147,7 +147,12 @@ fetch("/api/mandate", {
         }}
       />
 
-      <div className="sovereign-container">
+      <div
+  className="sovereign-container"
+  style={{
+    paddingTop: "2rem",
+  }}
+>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
