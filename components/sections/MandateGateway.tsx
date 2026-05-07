@@ -106,13 +106,6 @@ fetch("/api/mandate", {
   setSubmitted(true);
   form.reset();
 
-  setTimeout(() => {
-    document.getElementById("mandate")?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  }, 300);
-} else {
         alert("Submission failed. Please try again.");
       }
     })
