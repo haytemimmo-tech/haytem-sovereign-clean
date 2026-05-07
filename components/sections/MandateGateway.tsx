@@ -114,9 +114,9 @@ fetch("/api/mandate", {
       if (result.success) {
   setSubmitted(true);
   form.reset();
-
-        alert("Submission failed. Please try again.");
-      }
+} else {
+  alert("Submission failed. Please try again.");
+}
     })
     .catch(() => {
       alert("Error sending form.");
