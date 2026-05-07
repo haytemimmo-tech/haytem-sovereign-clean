@@ -124,7 +124,7 @@ fetch("/api/mandate", {
 }
   if (submitted) {
   return (
-    <section className="section-padding texture-overlay">
+    <section ref={successRef} className="section-padding texture-overlay">
       <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
 
         <h2 style={{ marginBottom: "1rem", color: "#d4af37" }}>
