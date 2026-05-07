@@ -66,11 +66,20 @@ export default function MandateGateway() {
 useEffect(() => {
   if (submitted) {
     setTimeout(() => {
-      successRef.current?.scrollIntoView({
+      const el = successRef.current;
+      if (!el) return;
+
+      const y =
+        el.getBoundingClientRect().top +
+        window.scrollY -
+        window.innerHeight / 2 +
+        el.offsetHeight / 2;
+
+      window.scrollTo({
+        top: y,
         behavior: "smooth",
-        block: "center",
       });
-    }, 150);
+    }, 200);
   }
 }, [submitted]);
 
