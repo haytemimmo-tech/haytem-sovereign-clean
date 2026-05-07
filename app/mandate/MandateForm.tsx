@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface MandateFormProps {
   city?: string;
@@ -11,6 +11,17 @@ export default function MandateForm({ city }: MandateFormProps) {
   ?.replaceAll("-", " ")
   .replace(/\b\w/g, (l) => l.toUpperCase());
   const [submitted, setSubmitted] = useState(false);
+  const successRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+  if (submitted) {
+    setTimeout(() => {
+      successRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }, 100);
+  }
+}, [submitted]);
 
   const inputStyle = {
     padding: "16px",
@@ -107,8 +118,9 @@ const cityFromUrl = params.get("city") || city || "Eldorado";
 </p>
 
       {submitted && (
-        <div
-          style={{
+  <div
+    ref={successRef}
+    style={{
             maxWidth: "650px",
             marginBottom: "35px",
             padding: "24px",
