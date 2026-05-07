@@ -58,17 +58,19 @@ const SelectField = ({
 
 export default function MandateGateway() {
   const ref = useRef(null);
+  const successRef = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', notes: '' });
-  useEffect(() => {
+
+useEffect(() => {
   if (submitted) {
     setTimeout(() => {
-      document.getElementById("mandate")?.scrollIntoView({
+      successRef.current?.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "center",
       });
-    }, 100);
+    }, 150);
   }
 }, [submitted]);
 
