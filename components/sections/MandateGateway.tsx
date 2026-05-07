@@ -75,8 +75,6 @@ export default function MandateGateway() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
   const form = e.currentTarget;
 
 
