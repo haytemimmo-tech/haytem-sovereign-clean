@@ -1,7 +1,5 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -22,6 +20,7 @@ const notes = body.notes || "";
 
 const isGatewayForm = Boolean(identity || channel || capital || mandateType);
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       from: "Mandate Desk <noreply@haytemsovereign.com>",
       to: [

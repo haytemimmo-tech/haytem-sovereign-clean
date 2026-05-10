@@ -1,23 +1,33 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Logo from './Logo';
 
 const NAV_LINKS = [
   { label: 'Advisory', href: '/#advisory' },
-  { label: 'Intelligence', href: '/blog' },
+  { label: 'Intelligence', href: '/intelligence' },
   { label: 'Eldorado', href: '/#eldorado' },
   { label: 'ABOUT', href: '/#about' },
-  { label: 'Journal', href: '/blog' },
+  { label: 'Journal', href: '/journal' },
 ];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
   const [isDesktop, setIsDesktop] = useState(true);
-  const [hovered, setHovered] = useState<string | null>(null);
+
+  // Helper function to determine if a route is active
+  const isRouteActive = (href: string): boolean => {
+    if (href.startsWith('/#')) {
+      // For anchor links, they're only active if we're on the home page
+      return pathname === '/';
+    }
+    // For page routes, match exactly or with subpaths
+    return pathname === href || pathname.startsWith(href + '/');
+  };
 
   useEffect(() => {
     const checkWidth = () => setIsDesktop(window.innerWidth >= 768);
@@ -74,13 +84,11 @@ export default function Navigation() {
           {isDesktop && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '28px', flexShrink: 0 }}>
               {NAV_LINKS.map((link) => {
-                const active = hovered === link.href;
+                const active = isRouteActive(link.href);
                 return (
                   <a
                     key={link.href}
                     href={link.href}
-                    onMouseEnter={() => setHovered(link.href)}
-                    onMouseLeave={() => setHovered(null)}
                     style={{
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '10px',
