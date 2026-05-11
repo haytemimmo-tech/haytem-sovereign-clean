@@ -361,16 +361,13 @@ This is institutional-grade geographic intelligence applied to capital allocatio
               }}
             >
               <img
-                src="/images/journal/montenegro.jpg"
+                src="/montenegro.png"
                 alt="Montenegro real estate investment"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
                   display: 'block',
-                }}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
             </div>
@@ -491,16 +488,13 @@ This is institutional-grade geographic intelligence applied to capital allocatio
               }}
             >
               <img
-                src="/images/journal/lustica-bay.jpg"
+                src="/Lustica.png"
                 alt="Luštica Bay investment opportunity"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
                   display: 'block',
-                }}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
             </div>
@@ -615,16 +609,13 @@ This is institutional-grade geographic intelligence applied to capital allocatio
               }}
             >
               <img
-                src="/images/journal/marrakech.jpg"
+                src="/Marrakech.png"
                 alt="Marrakech real estate intelligence"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
                   display: 'block',
-                }}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
             </div>
