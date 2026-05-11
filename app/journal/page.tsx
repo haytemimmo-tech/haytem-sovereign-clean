@@ -336,7 +336,150 @@ This is institutional-grade geographic intelligence applied to capital allocatio
         </section>
 
         {/* Articles */}
-        <section style={{ padding: '4rem 2rem', maxWidth: '900px', margin: '0 auto' }}>
+        <section style={{ padding: '4rem 2rem', maxWidth: '900px', margin: '0 auto' }}>          {/* Featured Preview: Albania */}
+          <article
+            style={{
+              marginBottom: '4rem',
+              overflow: 'hidden',
+              borderRadius: '8px',
+              border: '1px solid rgba(201,168,76,0.3)',
+              background: 'linear-gradient(135deg, rgba(201,168,76,0.05) 0%, rgba(10,10,10,0.5) 100%)',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'row', gap: 0 }}>
+              {/* Featured Image - Left */}
+              <div
+                style={{
+                  width: '45%',
+                  minHeight: '380px',
+                  position: 'relative',
+                  background: '#1a1a1a',
+                }}
+              >
+                <img
+                  src="/albania/albania-riviera-cover.jpg"
+                  alt="Aerial view of the Albanian Riviera coastline at golden hour"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'linear-gradient(90deg, transparent 30%, rgba(10,10,10,0.3) 100%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+              </div>
+
+              {/* Featured Content - Right */}
+              <div style={{ flex: 1, padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.65rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.2em',
+                    textTransform: 'uppercase',
+                    color: '#C9A84C',
+                    marginBottom: '1rem',
+                    display: 'inline-block',
+                    padding: '0.4rem 0.8rem',
+                    background: 'rgba(201,168,76,0.1)',
+                    borderRadius: '4px',
+                    width: 'fit-content',
+                  }}
+                >
+                  Latest Intelligence Brief
+                </div>
+
+                <h2
+                  style={{
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '1.8rem',
+                    fontWeight: 300,
+                    lineHeight: 1.3,
+                    color: '#F5F0E8',
+                    marginBottom: '1.2rem',
+                  }}
+                >
+                  Albania Riviera 2026
+                  <br />
+                  <span style={{ color: '#C9A84C', fontSize: '1.4rem' }}>The Last Pre-Institutional Mediterranean Coastline</span>
+                </h2>
+
+                <p
+                  style={{
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.7,
+                    color: 'rgba(245, 240, 232, 0.7)',
+                    marginBottom: '1.5rem',
+                  }}
+                >
+                  Vlora, Ksamil, and Durrës investment analysis for family offices, UHNWIs, and sovereign capital. Strategic positioning before institutional arrival. Pre-accession pricing, sovereign-backed development, converging international capital.
+                </p>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                  <a
+                    href="/journal/albania-riviera-2026-investment-thesis"
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '0.9rem',
+                      fontWeight: 500,
+                      color: '#C9A84C',
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      transition: 'gap 0.2s ease',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Read full brief →
+                  </a>
+
+                  <span
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '0.75rem',
+                      color: 'rgba(245,240,232,0.4)',
+                      letterSpacing: '0.05em',
+                    }}
+                  >
+                    14 min read · May 2026
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div
+            style={{
+              textAlign: 'center',
+              marginBottom: '3rem',
+              paddingBottom: '2rem',
+              borderBottom: '1px solid rgba(201,168,76,0.2)',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.8rem',
+                letterSpacing: '0.1em',
+                color: 'rgba(201,168,76,0.5)',
+                textTransform: 'uppercase',
+              }}
+            >
+              Additional Intelligence Briefs
+            </p>
+          </div>
           {/* Article 1: Montenegro */}
           <article
             style={{
