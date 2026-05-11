@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: 'Hassaneine Haytem | HAYTEM SOVEREIGN — Global Market Architect & Private Wealth Advisor',
   description:
     'Hassaneine Haytem is a sovereign-level strategic advisor operating at the intersection of institutional advisory, private wealth architecture, and emerging Eldorado real estate intelligence. Where Capital Becomes Legacy.',
+
+  verification: {
+    other: {
+      'msvalidate.01': '5ABC050A20E207A843383C6D0BDA0CA3',
+    },
+  },
+
   keywords: [
     'Hassaneine Haytem',
     'Haytem Sovereign',
