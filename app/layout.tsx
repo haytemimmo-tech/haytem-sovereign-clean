@@ -3,6 +3,9 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Hassaneine Haytem | HAYTEM SOVEREIGN — Global Market Architect & Private Wealth Advisor',
+  icons: {
+    icon: '/icon.png',
+  },
   description:
     'Hassaneine Haytem is a sovereign-level strategic advisor operating at the intersection of institutional advisory, private wealth architecture, and emerging Eldorado real estate intelligence. Where Capital Becomes Legacy.',
 
