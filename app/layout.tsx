@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'Hassaneine Haytem | HAYTEM SOVEREIGN — Global Market Architect & Private Wealth Advisor',
@@ -122,7 +123,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="grain">{children}</body>
+      <body className="grain">
+        {children}
+        <GoogleAnalytics gaId="G-WB9ZELDW6T" />
+      </body>
     </html>
   );
 }
