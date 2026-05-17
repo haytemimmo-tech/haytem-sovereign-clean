@@ -336,7 +336,133 @@ This is institutional-grade geographic intelligence applied to capital allocatio
         </section>
 
         {/* Articles */}
-        <section style={{ padding: '4rem 2rem', maxWidth: '900px', margin: '0 auto' }}>          {/* Featured Preview: Albania */}
+        <section style={{ padding: '4rem 2rem', maxWidth: '900px', margin: '0 auto' }}>
+
+          {/* Featured Preview: BRICS Property Migration 2026 */}
+          <article
+            style={{
+              marginBottom: '4rem',
+              overflow: 'hidden',
+              borderRadius: '8px',
+              border: '1px solid rgba(201,168,76,0.3)',
+              background: 'linear-gradient(135deg, rgba(201,168,76,0.05) 0%, rgba(10,10,10,0.5) 100%)',
+            }}
+          >
+            <div style={{ display: 'flex', flexDirection: 'row', gap: 0 }}>
+              {/* Featured Image - Left */}
+              <div
+                style={{
+                  width: '45%',
+                  minHeight: '380px',
+                  position: 'relative',
+                  background: '#1a1a1a',
+                }}
+              >
+                <img
+                  src="/brics/brics-migration-cover.jpg"
+                  alt="The Silent BRICS Property Migration 2026 — HAYTEM SOVEREIGN Intelligence Brief"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'linear-gradient(90deg, transparent 30%, rgba(10,10,10,0.3) 100%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+              </div>
+
+              {/* Featured Content - Right */}
+              <div style={{ flex: 1, padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.65rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.2em',
+                    textTransform: 'uppercase',
+                    color: '#C9A84C',
+                    marginBottom: '1rem',
+                    display: 'inline-block',
+                    padding: '0.4rem 0.8rem',
+                    background: 'rgba(201,168,76,0.1)',
+                    borderRadius: '4px',
+                    width: 'fit-content',
+                  }}
+                >
+                  Latest Intelligence Brief
+                </div>
+
+                <h2
+                  style={{
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '1.8rem',
+                    fontWeight: 300,
+                    lineHeight: 1.3,
+                    color: '#F5F0E8',
+                    marginBottom: '1.2rem',
+                  }}
+                >
+                  The Silent BRICS Property Migration
+                  <br />
+                  <span style={{ color: '#C9A84C', fontSize: '1.4rem' }}>Three Unexpected Jurisdictions for 2026</span>
+                </h2>
+
+                <p
+                  style={{
+                    fontFamily: 'Cormorant Garamond, serif',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.7,
+                    color: 'rgba(245, 240, 232, 0.7)',
+                    marginBottom: '1.5rem',
+                  }}
+                >
+                  Why $40B+ of Russian, Indian, and Chinese UHNW capital is quietly repositioning into Oman, Serbia, and Mauritius. Macro forces, jurisdiction-specific data, residency frameworks, and capital deployment architecture for family offices and sovereign-aligned investors.
+                </p>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                  <a
+                    href="/journal/silent-brics-property-migration-2026"
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '0.9rem',
+                      fontWeight: 500,
+                      color: '#C9A84C',
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      transition: 'gap 0.2s ease',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Read full brief →
+                  </a>
+
+                  <span
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '0.75rem',
+                      color: 'rgba(245,240,232,0.4)',
+                      letterSpacing: '0.05em',
+                    }}
+                  >
+                    18 min read · May 2026
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* Featured Preview: Albania */}
           <article
             style={{
               marginBottom: '4rem',
@@ -396,7 +522,7 @@ This is institutional-grade geographic intelligence applied to capital allocatio
                     width: 'fit-content',
                   }}
                 >
-                  Latest Intelligence Brief
+                  Featured Intelligence Brief
                 </div>
 
                 <h2
